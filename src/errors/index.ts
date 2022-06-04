@@ -1,1 +1,2 @@
-export * from "./RepositoryError"
+export * from "./RepositoryError";
+export * from "./DatabaseError";
