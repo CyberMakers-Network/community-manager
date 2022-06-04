@@ -33,10 +33,12 @@ export class BaseRepository {
   }
 
   async create(model: any): Promise<any> {
+    logger.info(`Creating: ${model}`);
     return this.model.create(model);
   }
 
   async update(id: string | Types.ObjectId, model: any): Promise<any> {
+    logger.info(`Updating: ${model}`);
     return this.model.findOneAndUpdate(
       { _id: id },
       { $set: model },
@@ -45,6 +47,7 @@ export class BaseRepository {
   }
 
   async delete(id: string | Types.ObjectId): Promise<any> {
+    logger.info(`Delete: ${id}`);
     return this.model.findOneAndDelete({ _id: id });
   }
 }
